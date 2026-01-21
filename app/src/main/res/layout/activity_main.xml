@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingTop="0dp"
+        android:paddingBottom="16dp">
+
+        <!-- Top Bar with Logo and Logout -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <ImageView
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:src="@drawable/logo"
+                android:contentDescription="App Logo"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/btnLogout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/logout_button_background"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:text="Logout"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:contentDescription="Logout button" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+
+        <!-- Voice Control Status (Hidden by default, shown only if voice control active) -->
+        <LinearLayout
+            android:id="@+id/voiceControlStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp"
+            android:padding="8dp"
+            android:background="#F5F5F5"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/voiceStatusIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_microphone"
+                app:tint="#0066CC"
+                android:contentDescription="Voice control icon"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:id="@+id/voiceStatusText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Listening... Say feature name"
+                android:textColor="#0066CC"
+                android:textSize="12sp"
+                android:contentDescription="Voice status" />
+        </LinearLayout>
+
+        <!-- EMERGENCY BUTTON - Large and Prominent -->
+        <Button
+            android:id="@+id/btnEmergency"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/emergency_button_background"
+            android:text="🚨 EMERGENCY HELP 🚨"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:elevation="4dp"
+            android:contentDescription="Emergency help button - Tap to call emergency contacts" />
+
+        <!-- Row 1: Perceptive Vision -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:id="@+id/btnPerceptiveVision"
+                style="@style/FeatureCard"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_margin="4dp">
+
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/ic_eye"
+                    app:tint="@android:color/white"
+                    android:layout_marginBottom="8dp"
+                    android:contentDescription="Eye icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Perceptive Vision"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/roboto_medium" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Row 2: Read Mate + Money Sense -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:id="@+id/btnReadMate"
+                style="@style/FeatureCard"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_weight="1"
+                android:layout_margin="4dp">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_book"
+                    app:tint="@android:color/white"
+                    android:layout_marginBottom="8dp"
+                    android:contentDescription="Book icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Read Mate"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto_medium" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnMoneySense"
+                style="@style/FeatureCard"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_weight="1"
+                android:layout_margin="4dp">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_money"
+                    app:tint="@android:color/white"
+                    android:layout_marginBottom="8dp"
+                    android:contentDescription="Money icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Money Sense"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto_medium" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Row 3: Obstacle Detection -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="12dp">
+
+            <LinearLayout
+                android:id="@+id/btnobstacledetection"
+                style="@style/FeatureCard"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_weight="1"
+                android:layout_margin="4dp">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_navigation"
+                    app:tint="@android:color/white"
+                    android:layout_marginBottom="8dp"
+                    android:contentDescription="Navigation icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Obstacle Detection"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto_medium" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Manage Emergency Contacts Button -->
+        <Button
+            android:id="@+id/btnManageContacts"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/feature_card_background"
+            android:contentDescription="Manage emergency contacts settings"
+            android:elevation="2dp"
+            android:text="⚙️ Manage Emergency Contacts"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvWelcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+    </LinearLayout>
+</ScrollView>

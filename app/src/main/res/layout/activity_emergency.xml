@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#CC0000"
+    android:padding="20dp">
+
+    <!-- Emergency Title -->
+    <TextView
+        android:id="@+id/tvEmergencyTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="🚨 EMERGENCY MODE 🚨"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:gravity="center"
+        android:padding="20dp"
+        android:background="#990000" />
+
+    <!-- Instructions -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TAP A CONTACT TO CALL FOR HELP"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:gravity="center"
+        android:padding="15dp"
+        android:layout_marginTop="10dp" />
+
+    <!-- Scrollable Contacts Container -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp">
+
+        <LinearLayout
+            android:id="@+id/contactsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+    <!-- Cancel Button -->
+    <Button
+        android:id="@+id/btnCancelEmergency"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:text="CANCEL EMERGENCY"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:background="#FFFF00" />
+
+</LinearLayout>
